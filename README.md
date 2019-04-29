@@ -4,6 +4,6 @@ Simple template for a website.
 # Run
 Install Go 
 
-'''$ go build main.go 
+```$ go build main.go 
 $ ./main 
-'''
+```
