@@ -2,7 +2,7 @@
 Simple template for a website.
 
 # Run
-Install Go 
+Make sure you have Go installed first
 
 ```
 $ go build main.go
