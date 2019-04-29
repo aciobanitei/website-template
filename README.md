@@ -2,8 +2,8 @@
 Simple template for a website.
 
 # Run
-- install Go
+Install Go 
 
-- $ go build main.go 
-- $ ./main 
-
+'''$ go build main.go 
+$ ./main 
+'''
