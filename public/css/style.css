@@ -730,7 +730,73 @@ h1, h2 {
  
  
  
+.fade-in-bottom {
+    -moz-animation:    fade-in-bottom 1.5s ease-in 0.5s both;
+	-ms-animation:     fade-in-bottom 1.5s ease-in 0.5s both;
+	-webkit-animation: fade-in-bottom 1.5s ease-in 0.5s both;
+	        animation: fade-in-bottom 1.5s ease-in 0.5s both;
+}
 
+
+
+@-webkit-keyframes fade-in-bottom {
+  0% {
+    -moz-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-bottom {
+  0% {
+    -moz-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+@-webkit-keyframes slide-out-top {
+  0% {
+    opacity: 1;
+    height: 100%;
+  }
+  100% {
+    opacity: 0;  
+    height: 0;
+  }
+}
+@keyframes slide-out-top {
+  0% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+    height:100%;
+  }
+  100% {
+    opacity: 0;
+    height:0;
+  }
+}
 
  
  

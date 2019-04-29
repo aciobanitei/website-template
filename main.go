@@ -188,46 +188,41 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		 request.Path = r.URL.Path
 	}
 
-	fmt.Printf("\nGot request: %s\n", request.Path)
-
-  	//DURING DEVELOPMENT TIME ONLY
-	loadWebsite()
-	//////
 	response := webPages["/"].Template
 	data     := webPages["/"].Data
+	data["IsLoading"] = false
 	
 	if request.Path == "/" {
-	        request.Path = "/home"
+	    request.Path = "/home"
+	    data["ActiveMenuItem"] = "home"
 		data["IsLoading"] = true
 	}
 	
 	
-	if request.Path != "/home" {
-		path := strings.Trim(request.Path, "/")
-		splits := strings.Split(path, "/")
-		path = splits[0]
-		if path == "projects" && len(splits) > 1 {
-			path = "project"
-		}
-		if content, ok := webPages[path]; ok {
+	path := strings.Trim(request.Path, "/")
+	splits := strings.Split(path, "/")
+	path = splits[0]
+	if path == "projects" && len(splits) > 1 {
+		path = "project"
+	}
+	if content, ok := webPages[path]; ok {
 
-			if path == "project" {
-				// for project pages retrieve ids
-				data["ActiveMenuItem"] = ""
-				_id := splits[1]
-				if _, ok := projectIndex[_id]; ok {
-					data["Content"] = HtmlTemplate(webPages[path].Template, DICT{"Project": projects[projectIndex[_id]]})
-				} else {
-					data["Content"] = HtmlTemplate("<center>404 Page not found</center>", nil)
-				}
+		if path == "project" {
+			// for project pages retrieve ids
+			data["ActiveMenuItem"] = ""
+			_id := splits[1]
+			if _, ok := projectIndex[_id]; ok {
+				data["Content"] = HtmlTemplate(webPages[path].Template, DICT{"Project": projects[projectIndex[_id]]})
 			} else {
-			data["ActiveMenuItem"] = splits[0]
-			data["Content"] = HtmlTemplate(content.Template, content.Data)
-		}
+				data["Content"] = HtmlTemplate("<center>404 Page not found</center>", nil)
+			}
 		} else {
-			data["Content"] = HtmlTemplate("<center>404 Page not found</center>", nil)
-		}
-	} 
+		data["ActiveMenuItem"] = splits[0]
+		data["Content"] = HtmlTemplate(content.Template, content.Data)
+	}
+	} else {
+		data["Content"] = HtmlTemplate("<center>404 Page not found</center>", nil)
+	}
 
 
 	t := template.New("response").Funcs(templateFunctions)
@@ -381,10 +376,13 @@ func loadTemplates() {
 					"Email"          : userData.Email,
 					"Phone"          : userData.Phone,
 					
-					"IsLoading"      : false,
-					"ActiveMenuItem" : "home",
 					"Menu"           : menu,
-					"Content"        : HtmlTemplate(loadHtmlTemplate("templates/home.tmpl"), DICT{"Home" : userData.Home, "Projects" : projects[0:3]})}},
+					"Content"        : ""}},
+		"home"    : TemplateData{ 
+		        loadHtmlTemplate("templates/home.tmpl"), 
+		        DICT{
+		            "Home" : userData.Home, 
+		            "Projects" : projects[0:3]}},
 		"projects": TemplateData{
 				loadHtmlTemplate("templates/projects.tmpl"),
 				DICT{
