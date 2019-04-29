@@ -1,0 +1,154 @@
+{
+    "Name": "Jane Doe",
+    "Profession" : "SOFTWARE ENGINEER",
+    "Linkedin": "https://www.linkedin.com",
+    "Github": "https://github.com",
+    "Email": "jane@doe.com",
+    "Phone": "+12 34 56 78 900",
+    "Header": "\"Website template.\"",
+    
+    
+    "Home": {
+    
+        "Intro": [
+                "Vestibulum in sapien hendrerit, sollicitudin ex quis, sagittis nulla. Nam porta sed orci sit amet egestas. Integer tempus suscipit orci, ut facilisis neque sagittis sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis nisi diam, ultrices non rutrum et, euismod at sapien. Sed felis lorem, lobortis at ultricies nec, ullamcorper a elit. Fusce euismod nisl sed nunc tempus, vel cursus nisi porttitor. In sed malesuada est, tincidunt hendrerit risus. In malesuada dapibus luctus. Nam convallis enim et elementum ultricies. ", 
+                "&laquo;This&raquo; is a link!"   
+                ],
+                
+        "href" : {"&laquo;This&raquo;" : "/about"}   
+    },
+    
+    
+    
+    
+    "AboutMe" : {
+        
+        "Profile": [
+        "Integer sed eros rhoncus, placerat felis vitae, mollis magna. Aenean in finibus lectus. Aenean pretium ac nisi et vulputate. Praesent ultricies lobortis justo, a iaculis arcu ultrices eu. In rutrum nibh justo, et rhoncus purus suscipit eget. Nunc vitae felis scelerisque, malesuada leo at, hendrerit dolor. In vulputate eleifend augue. Donec posuere velit eget elementum imperdiet.  "
+        
+         ],
+        
+        
+        
+        
+        "Experience" : [
+        
+        {
+            "Role": "Role",
+            "Company" : "Company",
+            "Location" : "Location",
+            "Date" : "Jan 1999 - Jan 2019 ",
+            "Description": [
+            "Donec massa odio, vehicula tincidunt placerat id, tempus quis nisi. Vivamus sagittis tortor velit, eu fringilla ante sagittis quis. Nam aliquet leo sed orci tempus, vitae mollis augue tincidunt. Vivamus feugiat rutrum dignissim. Quisque dignissim risus nec nisi tincidunt blandit. Praesent ut ligula sodales, hendrerit purus ac, rhoncus lacus. Sed id semper nulla. Aenean imperdiet posuere ligula id laoreet. Mauris id enim viverra, euismod nulla quis, pulvinar nunc. Donec aliquet orci quis lacus dignissim pulvinar. Etiam ut libero quis sem rhoncus lacinia eget sit amet eros. "
+            ],
+            "href": {}
+        },
+        {
+            "Role": "Role",
+            "Company" : "Company",
+            "Location" : "Location",
+            "Date" : "Jan 1999 - Jan 2019 ",
+            "Description": [
+            "Donec massa odio, vehicula tincidunt placerat id, tempus quis nisi. Vivamus sagittis tortor velit, eu fringilla ante sagittis quis. Nam aliquet leo sed orci tempus, vitae mollis augue tincidunt. Vivamus feugiat rutrum dignissim. Quisque dignissim risus nec nisi tincidunt blandit. Praesent ut ligula sodales, hendrerit purus ac, rhoncus lacus. Sed id semper nulla. Aenean imperdiet posuere ligula id laoreet. Mauris id enim viverra, euismod nulla quis, pulvinar nunc. Donec aliquet orci quis lacus dignissim pulvinar. Etiam ut libero quis sem rhoncus lacinia eget sit amet eros. "
+            ],
+            "href": {}
+        },
+        {
+            "Role": "Role",
+            "Company" : "Company",
+            "Location" : "Location",
+            "Date" : "Jan 1999 - Jan 2019 ",
+            "Description": [
+            "Donec massa odio, vehicula tincidunt placerat id, tempus quis nisi. Vivamus sagittis tortor velit, eu fringilla ante sagittis quis. Nam aliquet leo sed orci tempus, vitae mollis augue tincidunt. Vivamus feugiat rutrum dignissim. Quisque dignissim risus nec nisi tincidunt blandit. Praesent ut ligula sodales, hendrerit purus ac, rhoncus lacus. Sed id semper nulla. Aenean imperdiet posuere ligula id laoreet. Mauris id enim viverra, euismod nulla quis, pulvinar nunc. Donec aliquet orci quis lacus dignissim pulvinar. Etiam ut libero quis sem rhoncus lacinia eget sit amet eros. "
+            ],
+            "href": {}
+        },
+        {
+            "Role": "Role",
+            "Company" : "Company",
+            "Location" : "Location",
+            "Date" : "Jan 1999 - Jan 2019 ",
+            "Description": [
+            "Donec massa odio, vehicula tincidunt placerat id, tempus quis nisi. Vivamus sagittis tortor velit, eu fringilla ante sagittis quis. Nam aliquet leo sed orci tempus, vitae mollis augue tincidunt. Vivamus feugiat rutrum dignissim. Quisque dignissim risus nec nisi tincidunt blandit. Praesent ut ligula sodales, hendrerit purus ac, rhoncus lacus. Sed id semper nulla. Aenean imperdiet posuere ligula id laoreet. Mauris id enim viverra, euismod nulla quis, pulvinar nunc. Donec aliquet orci quis lacus dignissim pulvinar. Etiam ut libero quis sem rhoncus lacinia eget sit amet eros. "
+            ],
+            "href": {}
+        }
+       ],
+       
+       "Publications" : [
+       
+       {
+            "Title" : "Paper Name",
+            "Authors" : ["Jane Doe", "Author 2", "Author 3"],
+            "Date": "Conference 2019",
+            "Link" : "http://dx.doi.org/"
+       
+       },
+       {
+            "Title" : "Paper Name",
+            "Authors" : ["Jane Doe", "Author 2", "Author 3"],
+            "Date": "Conference 2019",
+            "Link" : "http://dx.doi.org/"
+       
+       },
+       {
+            "Title" : "Paper Name",
+            "Authors" : ["Jane Doe", "Author 2", "Author 3"],
+            "Date": "Conference 2019",
+            "Link" : "http://dx.doi.org/"
+       
+       }
+       ],
+       
+       "Education": [
+            {
+                "Title": "Degree",
+                "Institution" : "University Name",
+                "Date" : "Time Period",
+                "Details" : "Field of study, .... other information",
+                "href": {}
+            },
+            {
+                "Title": "Degree",
+                "Institution" : "University Name",
+                "Date" : "Time Period",
+                "Details" : "Field of study, .... other information",
+                "href": {}
+            }
+       ]
+       
+    },
+    
+    "ProjectsInfo": {
+        "Intro": [" Integer sed eros rhoncus, placerat felis vitae, mollis magna. Aenean in finibus lectus. Aenean pretium ac nisi et vulputate. Praesent ultricies lobortis justo, a iaculis arcu ultrices eu. "
+        ],
+        "href" : {}
+    }, 
+    "ContactInfo" : {
+        "Intro": [" Integer sed eros rhoncus, placerat felis vitae, mollis magna. Aenean in finibus lectus. Aenean pretium ac nisi et vulputate."
+        ],
+        "href" :  {}
+     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

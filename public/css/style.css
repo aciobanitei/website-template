@@ -1,0 +1,738 @@
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+@import url(https://fonts.googleapis.com/css?family=Rubik:400,500,800);
+@import url(https://fonts.googleapis.com/css?family=Handlee);
+:root {
+    --back: #2c3e50;
+    --primary: silver;
+    --main: #fff;
+    --card-title: #2c3e50;
+    --card-back: silver;
+    --link-hover: #2c3e50;
+    --link: #009688;
+    --btn-w: 10em;
+    --dot-w: calc(var(--btn-w)*.2);
+    --tr-X: calc(var(--btn-w) - var(--dot-w));
+    
+    --box-w: 300;
+    --box-h: 300;
+}
+
+html { overflow-y: scroll; }
+
+
+* {
+    box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width:350px;
+  background-color: var(--back);
+  
+}
+
+
+pre {
+  max-height: 400px;
+}
+
+h1, h2 {
+    font-family: 'Handlee';
+}
+
+
+
+
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index:1;
+}
+
+#HEADER {
+    
+    min-height: 50px;
+}
+
+#NAV_CONTAINER {
+    background-color: var(--back);
+
+}
+
+#CONTENT {
+
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+
+}
+
+#CV h1 i {
+    font-size:36px!important;
+    margin-right:10px!important;
+}
+#CV h6 i {
+    font-size:20px!important;
+    margin-right:2px!important;
+}
+ 
+ /*** Header Animation ***/
+ 
+ 
+.site-header {
+    position:relative; 
+    right:0;
+    bottom:0;
+    margin: auto 20%;
+    text-align: right;
+    display: block;
+    height: 50px;
+    padding: 10px 0 0 0;
+}
+
+.site-header ul {
+    margin: auto;
+    
+    text-decoration:none;
+    font-size: calc(10px + 1.2vw);
+    width:100%;
+    
+    max-height:40px;
+    float:right;
+}
+
+.site-header ul li {
+    color: silver;
+    font-family: 'Handlee', sans-serif;
+    display: inline;
+    
+}
+
+
+
+
+@keyframes blur-in {
+    100% {
+        opacity: 1;
+        filter:blur(0px);
+    }
+    0% {
+        opacity: 0;
+        filter:blur(10px);
+    }
+}
+ 
+
+
+
+
+/******   Menu bar  *****/
+
+.menu_item {
+  font-family: 'Raleway', Arial, sans-serif;
+  text-align: left;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+.menu_item * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.menu_item li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0.5em 1.5em;
+  padding: 0;
+}
+.menu_item a {
+  padding: 0.3em 0;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+}
+.menu_item a:before,
+.menu_item a:after {
+  height: 3px;
+  position: absolute;
+  content: '';
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  background-color: silver;/*#9b59b6;*/
+  width: 0;
+}
+.menu_item a:before {
+  top: 0;
+  left: 0;
+}
+.menu_item a:after {
+  bottom: 0;
+  right: 0;
+}
+.menu_item a:hover,.menu_item .active a {
+  color: #ffffff;
+}
+.menu_item a:hover:before,.menu_item .active a:before,.menu_item a:hover:after,.menu_item .active a:after {
+  width: 100%;
+}
+
+.menu_item .active{
+  color: #ffffff;
+}
+
+/*****   Footer    *****/
+
+.footer {
+	color: var(--primary);
+	cursor: default;
+	height: 80px;
+	left: 0;
+	position: absolute;
+	text-align: center;
+  	text-decoration: none;
+	width: 100%;
+}
+
+
+
+/***** General elements   *****/
+
+.info {
+
+    padding: 20px 0;
+}
+.column {
+
+    width:100%;
+}
+
+.info h5, .info h6, .info i, .column h5, .column h6, .column i {
+    color: var(--back);
+
+}
+.info p{
+ text-indent: 20px;
+
+}
+.info i, .column i{
+    color:var(--primary);
+
+}
+
+.info a, .column a {
+    color: var(--link);
+    text-decoration:none;
+}
+.info a:hover, .column a:hover {
+    color: var(--link-hover);
+}
+
+
+
+
+/****   Projects gallery  ****/
+
+.gallery {
+	text-align: center;
+	
+	border-top: 3px dotted #e5e5e5;
+	margin-bottom: 1px;
+	margin: 20px auto;
+}
+
+
+.gallery h1 {
+	margin: 0;
+	width: 100%;
+	padding: 20px;
+	font-size: 40px;
+}
+
+.box {
+   /* background: var(--card-back);*/
+	color: var(--card-title);
+	box-shadow: none;
+	-webkit-transition: background 0.3s;
+	transition: background 0.3s;
+
+	width: var(--box-w);
+	height: var(--box-h);
+	position: relative;
+	display: inline-block;
+	margin: 10px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.box:hover {
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+
+
+
+.box img {
+    margin: 0;
+    width: 100%;
+    height:100%; 
+    padding:10px;
+    border-radius: 15px;
+    left:0;
+    top:0;
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+}
+
+.box:hover img {
+    -webkit-filter: none;
+    filter: none;
+}
+.box h3{
+    position:absolute;
+	
+    font-family: "Handlee", "Raleway";
+	text-shadow: 1px 1px 2px black; 
+	padding: 20px 5px;
+	color: var(--main);
+	top:20px;
+	font-weight: bold;
+	font-size:32px;
+	-webkit-text-stroke: 2px var(--back);
+	
+}
+.box span {
+    position:absolute;
+	font-family: 'Rubik', sans-serif;
+	letter-spacing: 1px;
+	font-size: 13px;
+	padding: 10px;
+	color: silver;
+	text-align: center;
+	bottom:0;
+	right:0;
+	color: silver;
+	font-weight: bold;
+	-webkit-text-stroke: 1px black;
+   /* text-shadow: 3px 3px 0 #000;*/
+}
+
+.box:hover {
+    background: var(--main);
+}
+
+.box svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:100%;
+	height:100%;
+}
+
+.box svg line {
+	stroke-width: 3;
+	stroke: var(--card-title);
+	fill: none;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+.box:hover svg line {
+	stroke-width: 10;
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+
+.box svg line.top,
+.box svg line.bottom {
+	stroke-dasharray: calc(var(--box-w) + 30) calc(var(--box-w) - 60); 
+}
+
+
+.box svg line.left,
+.box svg line.right {
+	stroke-dasharray: calc(var(--box-h) + 30) calc(var(--box-h) - 60); 
+}
+
+.box:hover svg line.top {
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+}
+
+.box:hover svg line.bottom {
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+}
+
+.box:hover svg line.left {
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
+}
+
+.box:hover svg line.right {
+	-webkit-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+
+/*****************************************/
+
+
+
+
+/****  CONTACT PAGE  *****/
+
+.contact {
+    padding: 20px;
+    margin: 20px auto;
+    display:flex;
+    min-height: 400px;
+    flex-flow: wrap;
+    
+}
+
+.contact h1{
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 5px 30px 5px;
+    font-size: calc(15px + 1vw);
+    float:center;
+    margin:40px;
+}
+.contact img {
+    text-align: center;
+    margin:auto;
+    width: calc(50px + 10vw);
+}
+
+.contact ul{
+    margin:20px auto;
+
+}
+.contact hr{
+    width:100%;
+    margin: 2% auto;
+}
+
+.contact li{
+    
+    list-style: outside none none;
+}
+.contact a{
+    font-family: 'Raleway', sans-serif;
+    min-width: 200px;
+    /*max-width:400px;*/
+    text-decoration: none;
+    font-size: calc(10px + 1vw);
+}
+.contact a:hover{
+    color: var(--back);
+}
+
+
+.contact i{
+    font-size: calc(10px + 1.2vw);
+}
+
+
+
+
+/**************************************************/
+
+
+
+
+
+
+
+/***** PET PROJECTS LIST ****/
+
+
+.project-container {
+    padding:20px;
+    overflow:auto;
+    font-family: 'Rubik';
+    color: var(--back);
+    opacity: 0.8;
+    position: relative;
+}
+
+
+.project {
+  display:flex;
+  width: 100%;
+  padding: 10px;
+}
+
+
+.project-container:hover {
+  cursor: pointer;
+  opacity: 1;
+  color: black;
+}
+
+
+.project img {
+    border-radius: 15px;
+    height:250px;
+    max-width:250px;
+}
+
+.project-presentation {
+    width:70%;
+    padding:20px;
+    display: block;
+}
+
+.project-presentation .project-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: calc(25px + 0.5vw);
+    text-decoration: none;
+    font-family: "Handlee", "Raleway";
+    height: 25%;
+    margin: 10px 0;
+}
+
+.project-presentation .project-summary {
+    font-size: calc(15px + 0.2vw);
+    vertical-align: middle;
+    text-align: center;
+    width:100%;
+}
+
+
+.metadata {
+    font-size: 12px;
+    font-style: italic;
+    width: 100%;
+    padding: 0 10px 10px 10px;
+}
+.metadata .project-timestamp{
+    
+    text-align: right;
+    float:right;
+    width: 30%;
+    
+}
+.metadata .project-tags{
+    text-align: left;
+    float:left;
+    width: 30%;
+}
+
+
+
+/******      BORDER ANIMATION       **********/ 
+ 
+.project-container .border {
+  position: absolute;
+  overflow:auto;
+}
+.project-container .border:before,
+.project-container .border:after,
+.project-container .border div:before,
+.project-container .border div:after {
+  background-color: var(--back);
+  position: absolute;
+  content: "";
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.project-container .border:before,
+.project-container .border:after {
+  width: 0;
+  height: 3px;
+}
+.project-container .border div:before,
+.project-container .border div:after {
+  width: 3px;
+  height: 0;
+}
+.project-container .border.one {
+  left: 0;
+  top: 0;
+  right: 8px;
+  bottom: 8px;
+}
+.project-container .border.one:before,
+.project-container .border.one div:before {
+  left: 0;
+  top: 0;
+}
+.project-container .border.one:after,
+.project-container .border.one div:after {
+  bottom: 0;
+  right: 0;
+}
+.project-container .border.two {
+  left: 8px;
+  top: 8px;
+  right: 0;
+  bottom: 0;
+}
+.project-container .border.two:before,
+.project-container .border.two div:before {
+  right: 0;
+  top: 0;
+}
+.project-container .border.two:after,
+.project-container .border.two div:after {
+  bottom: 0;
+  left: 0;
+}
+.project-container:hover .border:before,
+.project-container.hover .border:before,
+.project-container:hover .border:after,
+.project-container.hover .border:after {
+  width: 100%;
+}
+.project-container:hover .border div:before,
+.project-container.hover .border div:before,
+.project-container:hover .border div:after,
+.project-container.hover .border div:after {
+  height: 100%;
+}
+
+
+
+
+
+/****   PAGE INDEX on PROJECT LIST PAGE   ****/
+
+.pagination {
+    display: inline-block;
+    margin:30px auto;
+}
+
+.pagination a {
+    width: 50px;
+    color: var(--back);
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: var(--back);
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: var(--primary);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.pagination a.disabled {
+    pointer-events: none;
+    cursor: default;
+    border: 0px;
+}
+
+
+
+/**************   PROJECT PAGE ************/
+.description {
+  font-size: calc(15px + 0.5vw);
+  text-align:center;
+}
+
+.project-page {
+  display: inline-block;
+  padding: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  line-height: 200%;
+}
+
+
+.project-page .project-title h1 {
+  text-align: center !important;
+  width: 100%;
+}
+
+
+.project-page .project-title a {
+  font-weight: bold;
+  font-size: calc(35px + 0.5vw);
+  text-decoration: none;
+  text-align: center !important;
+  width: 100%;
+}
+
+.project-page .project-timestamp {
+  font-family: "Raleway";
+  font-weight: bold;
+  font-size: 12px;
+  padding: 4px;
+  margin-left: 4px;
+}
+.project-page .project-summary {
+  margin-top: 10px;
+}
+.project-page .project-body {
+  margin-top: 10px;
+}
+.project-page img {
+    border-radius: 8px;
+    border: 2px solid var(--back);
+    width: 100%;
+    height: auto;
+    max-height:700px;
+    text-shadow: 0 0 4px 2px rgba(0, 140, 186, 0.5);
+ }
+ 
+ 
+@media screen and (max-width: 600px) {
+    .project {
+      display:flex;
+      flex-flow:column;
+      align-items: center;
+      text-align:center;
+      width: 100%;
+      margin:20px auto;
+    }
+    .project-container {
+      width: 100%;
+      
+    }
+    .project-presentation {
+        width:100%;
+        align-items:center;
+        float:center;
+    }
+    .proiect img {
+        float:center;
+        width: 100%;
+    }
+    
+    .contact {
+        padding: 20px;
+        margin: 20px auto;
+        display:flex;
+        min-height: 400px;
+        flex-flow: column;
+    
+    }
+    .contact ul{
+        margin:20px auto;
+        width:100%;
+    }
+}
+
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 

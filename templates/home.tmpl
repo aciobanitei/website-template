@@ -1,0 +1,33 @@
+
+
+ 	<div class="info">
+       {{with  ($h := .Home) }}
+           {{range $index, $par := $h.Intro }}
+                <p>{{insertHref $par $h.href "<a href=\"$value\">$key</a>" }}</p> 
+          {{end}} 
+      {{end}}
+  		
+	</div>
+
+	<div class="gallery">
+	<h1>Recent Projects</h1>
+	
+	{{range $index, $project := .Projects }}
+        <a href="/projects/{{$project.Id}}">
+        <div class="box" id="project-{{$project.Id}}">
+          <svg width="100%">
+				    <line class="top" x1="0" y1="0" x2="900" y2="0"/>
+				    <line class="left" x1="0" y1="300" x2="0" y2="-600"/>
+				    <line class="bottom" x1="300" y1="300" x2="-600" y2="300"/>
+				    <line class="right" x1="300" y1="0" x2="300" y2="900"/>
+	      </svg>
+	      
+          <img src="{{$project.Image}}">
+          <h3>{{$project.Title}}</h3>
+          
+          <span>{{$project.Timestamp}}<span>
+        </div>
+        </a>
+    {{end}}
+  
+   </div>

@@ -1,0 +1,96 @@
+<html>
+<head>
+    <title>{{.Name}}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/public/images/favicon.ico"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="/public/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/intro.css" type="text/css" /> 
+    
+    <link rel="stylesheet" href="/public/css/animate.css" type="text/css" /> 
+
+    <script src="/public/js/animate.js"></script>
+</head>
+<body onload="load_pagination({{.ActiveMenuItem}})">
+ 
+  
+   {{ if .IsLoading }}
+ <div id="INTRO"> 
+    
+     <div class="intro-back"></div>
+     <div class="intro">
+            <h1>{{.Name}}</h1>
+            <p>&nbsp;&bull;&nbsp;{{.Profession}}&nbsp;&bull;&nbsp;</p>
+            <nav>
+                <ul>
+	                <li><a href="{{.Linkedin}}" class="icon fa-linkedin"></a></li>
+	                <li><a href="{{.Github}}" class="icon fa-github"></a></li>
+	                <li><a href="mailto:{{.Email}}" class="icon fa-envelope-o"></a></li>
+                </ul>
+            </nav>
+            
+      </div>
+      <div class="wrapper fade-in-bottom">
+              <div class="intro-buttons">
+                      <a href="#" onclick="onIntroExit()"><button>Go to Website</button></a>
+                      <a href="/public/cv.pdf"><button>Download CV</button></a>
+              </div>
+      </div>
+      
+  </div>
+  {{end}}
+  
+  <!--- HEADER --->
+  <div id="HEADER" class="{{if .IsLoading}}w3-hide{{end}}" data-title="{{.Header}}"> 
+   {{ if not .IsLoading }}
+      <script>setupHeader(false);</script>
+   {{end}}
+  </div>
+    
+  <!--- NAVBAR --->
+  <div class="w3-container {{if .IsLoading}}w3-hide{{end}}" id="NAV_CONTAINER" style="margin-top:5px; margin-bottom:10px;">
+      <div id="NAV" class="menu_item" style="width:100%;">
+
+        {{range .Menu}}
+          <a href="/{{.Id}}" id="{{.Id}}" style="padding:5px 15px;margin: 5px;" class="w3-bar-item {{if .Active}}active{{else}}w3-hide-small{{end}}">
+            <i class="fa fa-{{.Icon}} w3-xlarge"></i> {{.Caption}} </a>
+
+        {{end}}
+          <!-- HIDDEN MENU ICON -->
+          <a href="javascript:void(0)" onclick="onMenuClick()" style="padding:5px 15px;margin: 5px;" class="w3-bar-item w3-hide-large w3-hide-medium w3-right">
+            <i class="fa fa-bars w3-xlarge"></i></a>
+      </div>
+
+      <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+      <div id="NAV_MOBILE" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-bar menu_item">
+
+        {{range .Menu}}
+          <!-- HOME -->
+          <a href="/{{.Id}}" id="mobile{{.Id}}" style="padding:5px 15px;margin: 5px;" class="w3-bar-item w3-round-large {{if .Active}} w3-hide {{else}} w3-show {{end}}">
+            <i class="fa fa-{{.Icon}} w3-xlarge"></i> {{.Caption}} </a>
+ 
+        {{end}}
+
+      </div>
+  </div>
+
+  <!--- MAIN CONTENT -->
+  <div class="w3-main w3-content w3-responsive w3-container w3-card w3-white w3-text-grey {{if .IsLoading}}w3-hide{{end}}" style="max-width:1200px; width:100%; padding:30px; margin-bottom:30px;" id="CONTENT">
+
+    {{.Content}}
+ </div>
+
+  <!-- Footer -->
+  <div class="footer {{if .IsLoading}}w3-hide{{end}}" id="FOOTER">
+	  <span class="copyright">&copy; 2019 <a href="/">{{.Name}}</a></span>
+  </div>
+  
+  
+</body>
+</html>
+

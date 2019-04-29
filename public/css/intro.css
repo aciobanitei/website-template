@@ -1,0 +1,444 @@
+
+
+@import url("https://fonts.googleapis.com/css?family=Lora:400,500,800");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500,800");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
+
+
+
+.intro-back {
+    background-image: url("../images/intro.png");
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    top: 0;
+    bottom:0;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+
+
+
+
+
+/* Intro button wrapper */
+
+
+.wrapper {
+  position:absolute;
+  width:100%;
+  margin:auto;
+  top:70vh;
+  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: all .4s ease-out;
+}
+
+
+
+
+/***** MORE BUTTON  *****/
+.intro-buttons {
+    text-align:center;
+    position:relative;
+    margin:auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    max-width:800px;
+}
+
+.intro-buttons button {
+    color:var(--primary);
+    background:transparent;
+    border-width:2px;
+    border-style: solid;
+    border-color: var(--primary);
+    position:relative;
+    margin:1em;
+    display:inline-block;
+    padding:1px 0.5em;
+    transition:all 0.3s ease-in-out;
+    text-align:center;
+    font-family:'Raleway';
+    font-size: calc(10px + 1vw);
+    font-weight:300;
+}
+.intro-buttons button:before, .intro-buttons button:after {
+    content:'';
+    display:block;
+    position:absolute;
+    border-color:var(--primary);
+    box-sizing:border-box;
+    border-style:solid;
+    width:1em;
+    height:1em;
+    transition:all 0.3s ease-in-out;
+}
+.intro-buttons button:before {
+    top:-6px;
+    left:-6px;
+    border-width:2px 0 0 2px;
+    z-index:5;
+}
+.intro-buttons button:after {
+    bottom:-6px;
+    right:-6px;
+    border-width:0 2px 2px 0;
+}
+.intro-buttons button:hover:before, .intro-buttons button:hover:after {
+    width:calc(100% + 12px);
+    height:calc(100% + 12px);
+    border-color:#fff;
+}
+.intro-buttons button:hover {
+    color:#353535;
+    cursor: pointer;
+    background-color:#fff;
+    border-color:#fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*****   HEADER   ******/
+
+
+
+.intro {
+    width: 100%;
+    color: var(--primary);
+    top:10vh;
+    padding: 0;
+
+    margin: auto;
+
+    display: block;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+
+
+    -moz-animation: intro_anim 1s 0.5s forwards;
+    -webkit-animation: intro_anim 1s 0.5s forwards;
+    -ms-animation: intro_anim 1s 0.5s forwards;
+    animation: intro_anim 1s 0.5s forwards;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  
+}
+
+
+.icon {
+	text-decoration: none;
+	position: relative;
+}
+
+.icon:before {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	text-transform: none !important;
+}
+
+
+.intro h1 {
+    font-size: calc(30px + 2.5vw);
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0.5em 0 0.5em 0 ;
+    letter-spacing: -0.035em;
+    line-height: 1em;
+    font-weight: 900;
+}
+
+.intro p {
+    font-size: calc(10px + 0.5vw);
+    margin: 0.75em 0 0.75em 0;
+    opacity: 0.75;
+    font-family: 'Raleway';
+    text-transform: uppercase;
+}
+
+
+.intro nav ul {
+    padding: 0;
+  
+}
+
+.intro nav li {
+    display: inline-block;
+    opacity: 0;
+    position: relative;
+    top: 0;
+    margin: 0 15px;
+
+    -moz-animation: nav-icons 0.7s ease-in-out forwards;
+    -webkit-animation: nav-icons 0.7s ease-in-out forwards;
+    -ms-animation: nav-icons 0.7s ease-in-out forwards;
+    animation: nav-icons 0.7s ease-in-out forwards;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  
+}
+
+
+.intro nav a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    border: 0;
+    display: inline-block;
+    text-decoration: none;
+
+    margin:2vh 1vw;
+    max-width: 175px;
+    max-height: 175px;
+}
+
+.intro nav a:before {
+	-moz-transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	border-radius: 100%;
+	border: solid 1px #fff;
+	display: block;
+	font-size: calc(10px + 2.3vw);
+	height: 1.8em;
+	line-height: 1.8em;
+	position: relative;
+	text-align: center;
+	top: 0;
+	width: 1.8em;
+}
+
+.intro nav a:hover {
+	font-size: calc(15px + 2.3vw);
+}
+
+.intro nav a:hover:before {
+	background-color: rgba(255, 255, 255, 0.175);
+	color: #fff;
+	font-size: calc(10px + 2.3vw);
+}
+
+.intro nav a:active {
+	background: none;
+}
+
+.intro nav a:active:before {
+	background-color: rgba(255, 255, 255, 0.35);
+	color: #fff;
+}
+
+
+
+/* Intro animation */
+
+@-moz-keyframes intro_anim {
+	0% {
+		-moz-transform: translate3d(0,1em,0);
+		-webkit-transform: translate3d(0,1em,0);
+		-ms-transform: translate3d(0,1em,0);
+		transform: translate3d(0,1em,0);
+		opacity: 0;
+	}
+
+	100% {
+		-moz-transform: translate3d(0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes intro_anim {
+	0% {
+		-moz-transform: translate3d(0,1em,0);
+		-webkit-transform: translate3d(0,1em,0);
+		-ms-transform: translate3d(0,1em,0);
+		transform: translate3d(0,1em,0);
+		opacity: 0;
+	}
+
+	100% {
+		-moz-transform: translate3d(0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
+}
+
+@-ms-keyframes intro_anim {
+	0% {
+		-moz-transform: translate3d(0,1em,0);
+		-webkit-transform: translate3d(0,1em,0);
+		-ms-transform: translate3d(0,1em,0);
+		transform: translate3d(0,1em,0);
+		opacity: 0;
+	}
+
+	100% {
+		-moz-transform: translate3d(0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
+}
+
+@keyframes intro_anim {
+	0% {
+		-moz-transform: translate3d(0,1em,0);
+		-webkit-transform: translate3d(0,1em,0);
+		-ms-transform: translate3d(0,1em,0);
+		transform: translate3d(0,1em,0);
+		opacity: 0;
+	}
+
+	100% {
+		-moz-transform: translate3d(0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes nav-icons {
+	0% {
+		-moz-transform: translate3d(0,1em,0);
+		-webkit-transform: translate3d(0,1em,0);
+		-ms-transform: translate3d(0,1em,0);
+		transform: translate3d(0,1em,0);
+		opacity: 0;
+	}
+
+	100% {
+		-moz-transform: translate3d(0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes nav-icons {
+	0% {
+		-moz-transform: translate3d(0,1em,0);
+		-webkit-transform: translate3d(0,1em,0);
+		-ms-transform: translate3d(0,1em,0);
+		transform: translate3d(0,1em,0);
+		opacity: 0;
+	}
+
+	100% {
+		-moz-transform: translate3d(0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
+}
+
+@-ms-keyframes nav-icons {
+	0% {
+		-moz-transform: translate3d(0,1em,0);
+		-webkit-transform: translate3d(0,1em,0);
+		-ms-transform: translate3d(0,1em,0);
+		transform: translate3d(0,1em,0);
+		opacity: 0;
+	}
+
+	100% {
+		-moz-transform: translate3d(0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
+}
+
+@keyframes nav-icons {
+	0% {
+		-moz-transform: translate3d(0,1em,0);
+		-webkit-transform: translate3d(0,1em,0);
+		-ms-transform: translate3d(0,1em,0);
+		transform: translate3d(0,1em,0);
+		opacity: 0;
+	}
+
+	100% {
+		-moz-transform: translate3d(0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
+}
+
+
+
+/* three icons: linkedin, github and email */
+
+.intro nav li:nth-child(1) {
+	-moz-animation-delay: 1.5s;
+	-webkit-animation-delay: 1.5s;
+	-ms-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}
+
+.intro nav li:nth-child(2) {
+	-moz-animation-delay: 1.75s;
+	-webkit-animation-delay: 1.75s;
+	-ms-animation-delay: 1.75s;
+	animation-delay: 1.75s;
+}
+
+.intro nav li:nth-child(3) {
+	-moz-animation-delay: 2s;
+	-webkit-animation-delay: 2s;
+	-ms-animation-delay: 2s;
+	animation-delay: 2s;
+}
+
+
+
+
+

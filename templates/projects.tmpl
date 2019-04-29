@@ -1,0 +1,70 @@
+
+<div class="info description">
+   {{with  ($pi := .ProjectsInfo) }}
+          {{range $index, $par := $pi.Intro }}
+                <p>{{insertHref $par $pi.href "<a href=\"$value\">$key</a>" }}</p> 
+          {{end}} 
+   {{end}}
+   
+<hr>
+</div>
+
+<div id="PROJECTLIST">
+
+    {{range $index, $project := .Projects }}
+    
+    <div class="project-container" onclick="location.href='/projects/{{$project.Id}}'" id="project-{{$project.Id}}">
+    
+      <div class="project">
+      
+      {{ if not (isIndexOddNumber $index) }}
+      
+          <img src="{{$project.Image}}" style="float:left;left:0;"/>
+          
+          <div class="project-presentation" style="float:right; margin-left:5%;">
+            <div class="project-title">{{$project.Title}}</div>
+            <div class="project-summary"><p>{{$project.Summary}}</p></div>
+            
+          </div>
+          
+      
+      {{else}}
+      
+         <div class="project-presentation" style="float:left; margin-right:5%;">
+            <div class="project-title">{{$project.Title}}</div>
+            <div class="project-summary"><p>{{$project.Summary}}</p></div>
+            
+          </div>
+          
+            <img src="{{$project.Image}}" style="float:right;right:0;"/>
+            
+      {{end}}    
+         
+      </div>
+      <div class="metadata">
+            <div class="project-timestamp"><span>{{$project.Timestamp}} </span></div>
+            <div class="project-tags"><span>Tags:  {{$project.Tags}} </span></div>
+      </div>
+    
+    <div class="border one"><div></div></div>
+    <div class="border two"><div></div></div>
+    
+    </div> 
+    {{end}}
+  </div>
+
+
+
+
+    <!-- PAGINATION   --->
+     </br>
+    <div style="text-align:center;">
+       <div class="pagination" id="LIST"></div>
+    </div>
+</div>
+
+
+
+
+
+

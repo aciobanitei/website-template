@@ -1,0 +1,6 @@
+[
+	{ "ID": "home",    "Caption": "Home",    "Icon" : "home",       "Active" : false  },
+	{ "ID": "about",   "Caption": "About",   "Icon" : "user",       "Active" : false },
+	{ "ID": "projects","Caption": "Projects","Icon" : "pencil",	    "Active" : false },
+	{ "ID": "contact", "Caption": "Contact", "Icon" : "envelope",   "Active" : false }
+]

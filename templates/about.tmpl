@@ -1,0 +1,73 @@
+
+<div id="CV"> 
+
+    <div class="info">
+      <h1> <i class="fa fa-user fw"></i> {{.Name}}</h1>
+      <hr/>
+     {{range $index, $par := .Profile }}
+        <p>{{$par}}</p> 
+      {{end}} 
+    </div>
+
+    <div class="column">
+     
+ <!--  WORK EXPERIENCE -->
+    <div class="w3-twothird w3-padding-right">
+            <h1><i class="fa fa-suitcase fa-fw"></i>Professional Experience</h1>
+            
+            {{range $index, $job := .Experience }}   
+                <div>
+                  <h5><b>{{$job.Role}}  &commat;  {{$job.Company}}</b></h5>
+                  <h6>
+                    
+                  <div class="w3-half">
+                    <i class="fa fa-map-marker fa-fw"></i>{{$job.Location}}
+                    </div> 
+                    
+                  <div class="w3-half">
+                    <i class="fa fa-calendar fa-fw"></i>{{$job.Date}}
+                    </div> 
+                            
+                  </h6>
+                  {{range $index, $par := $job.Description }}
+                    <p>{{insertHref $par $job.href "<a href=\"$value\">$key</a>" }}</p> 
+                  {{end}} 
+                  <hr>
+                </div>
+           {{end}}
+           
+<!-- PUBLICATIONS -->
+          <div>
+            <h1><i class="fa fa-book fw"></i>Publications</h1>
+            <div>
+            {{with  ($root := .) }}
+                {{range $index, $paper := $root.Publications }}  
+                  <p><a href="{{$paper.Link}}">{{$paper.Title}}</a> - 
+                  {{range $ind, $author := $paper.Authors }}{{if (gt $ind 0)}}, {{end}}{{if (eq $root.Name $author)}}<u>{{$author}}</u>{{else}}{{$author}}{{end}}{{end}}
+                  - {{$paper.Date}}.</p>
+                {{end}}
+             {{end}}
+          
+            </div>
+          </div>
+     </div>
+        
+<!-- EDUCATION -->
+    <div class="w3-third">
+           <div class="w3-margin-left">
+            <h1><i class="fa fa-graduation-cap fa-fw"></i>Education</h1>
+            {{range $index, $degree := .Education }}
+             <div>
+                  <h5><b>{{$degree.Title}}</b></h5>
+                  <h6><i class="fa fa-building-o fa-fw"></i>{{$degree.Institution}}</h6>
+                  <h6><i class="fa fa-calendar fa-fw"></i>{{$degree.Date}}</h6>
+                  {{insertHref $degree.Details $degree.href "<a href=\"$value\">$key</a>" }}
+            </div> 
+            {{end}} 
+          </div>
+         </div>
+    </div>    
+</div>
+
+
+

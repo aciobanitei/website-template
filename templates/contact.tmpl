@@ -1,0 +1,29 @@
+
+
+<div class="contact">
+
+    <img src="/public/images/avatar.png"/>
+
+  <h1>
+   {{with  ($ci := .ContactInfo) }}
+     {{range $index, $par := $ci.Intro }}
+        {{insertHref $par $ci.href "<a href=\"$value\">$key</a>" }} 
+     {{end}} 
+   {{end}}
+  </h1>
+        
+    <hr>
+
+
+    <ul style="float:left;">
+        <li><a href="mailto:{{.Email}}"><i class="fa fa-envelope"></i> {{.Email}}</a></li>
+        <li><a><i class="fa fa-phone"></i> {{.Phone}} </a></li>
+    </ul>
+
+    <ul style="float:right;">
+        <li><a href="{{.Linkedin}}"><i class="fa fa-linkedin"></i> LinkedIn </a></li>
+        <li><a href="{{.Github}}"><i class="fa fa-github"></i> Github </a></li>
+    </ul>
+</div>
+
+
